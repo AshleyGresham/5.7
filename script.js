@@ -15,6 +15,16 @@ let cats = [{
   image_url: "https://i.pinimg.com/564x/cd/cf/c6/cdcfc6a44fa8ac71072e9756abea5522.jpg",
   age: 29,
   name: "Rockstar Cat"
+},
+{
+  image_url: "https://images.steamusercontent.com/ugc/1644340994747007967/853B20CD7694F5CF40E83AAC670572A3FE1E3D35/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+  age: 35,
+  name: "Sigma Cat"
+},
+{
+  image_url: "https://static.displate.com/270x380/displate/2023-06-01/223be9f8eccefa8cc09e5de8495b3719_44285b86c3c11293120f7be853096240.jpg",
+  age: 45,
+  name: "Mafia Cat"
 }
 ];
 
@@ -22,10 +32,13 @@ let cats = [{
 // This code is LAME and does not fit the cool
 // cat aesthetic. Rewrite it to use a for each
 // loop to render our cool cats to the DOM
-let newCat = document.createElement('div');
-newCat.innerHTML = renderCat(cats[0]);
-catDiv.appendChild(newCat);
 
+
+cats.forEach(function(cat){
+  let newCat = document.createElement('div');
+  newCat.innerHTML = renderCat(cat);
+  catDiv.appendChild(newCat);
+})
 function renderCat(cat) {
   return `
   <div class="catProfile">
